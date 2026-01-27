@@ -1,65 +1,131 @@
-# Starter Template with React Navigation
+# Custom Expo Starter Template
 
-This is a minimal starter template for React Native apps using Expo and React Navigation.
+A robust, feature-rich starter template for modern React Native development using Expo. This template is pre-configured with essential tools, libraries, and best practices to jumpstart your mobile application development.
 
-It includes the following:
+## 🚀 Features
 
-- Example [Native Stack](https://reactnavigation.org/docs/native-stack-navigator) with a nested [Bottom Tab](https://reactnavigation.org/docs/bottom-tab-navigator)
-- Web support with [React Native for Web](https://necolas.github.io/react-native-web/)
-- TypeScript support and configured for React Navigation
-- Automatic [deep link](https://reactnavigation.org/docs/deep-linking) and [URL handling configuration](https://reactnavigation.org/docs/configuring-links)
-- Theme support [based on system appearance](https://reactnavigation.org/docs/themes/#using-the-operating-system-preferences)
-- Expo [Development Build](https://docs.expo.dev/develop/development-builds/introduction/) with [Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)
+### Core & Navigation
 
-## Getting Started
+- **Expo SDK 54**: Built with the latest Expo tools and libraries.
+- **Expo Dev Client**: Ready for custom development builds.
+- **React Navigation 7**: Latest version using the new Static API for type-safe routing.
+  - Native Stack Navigator
+  - Bottom Tab Navigator
+  - Deep linking configuration
 
-1. Create a new project using this template:
+### State Management & Data
 
-   ```sh
-   npx create-expo-app@latest --template react-navigation/template
-   ```
+- **Redux Toolkit**: Efficient global state management.
+- **Redux Remember**: Persist your Redux state using custom storage drivers.
+- **MMKV**: Ultra-fast synchronous storage (used as the default storage driver).
+- **Expo Secure Store**: Encrypted storage for sensitive data (tokens, keys).
+- **Axios**: HTTP client configuration.
 
-2. Edit the `app.json` file to configure the `name`, `slug`, `scheme` and bundle identifiers (`ios.bundleIdentifier` and `android.bundleIdentifier`) for your app.
+### UI & UX
 
-3. Edit the `src/App.tsx` file to start working on your app.
+- **React Native Reanimated**: High-performance animations (60fps).
+- **React Native Action Sheet**: Cross-platform native action sheets.
+- **Custom Theming**: Centralized theme management system.
+- **Skeleton Loading**: Pre-built skeletal loading components with animations.
+- **Safe Area Context**: Handling notch and safe areas correctly.
 
-## Running the app
+### Developer Experience
 
-- Install the dependencies:
+- **TypeScript**: Strict type checking for better code quality.
+- **ESLint & Prettier**: Enforced coding standards and automatic formatting.
+- **Custom Lint Rules**:
+  - Auto-removal of unused imports.
+  - Restrictions on direct `react-redux` hook imports (enforcing typed hooks).
 
-  ```sh
-  npm install
+## 📂 Project Structure
+
+```
+src/
+├── components/          # Reusable UI components
+│   ├── bottom-sheets/   # Action sheets and modals
+│   ├── skeletons/       # Loading placeholders
+│   └── ui/              # Base UI elements (Buttons, FABs, etc.)
+├── configs/             # Configuration files (Env, Constants)
+├── navigation/          # Navigation setup and screens
+├── services/            # External services and API drivers
+│   └── storage-driver/  # MMKV and SecureStore wrappers
+├── store/               # Redux setup
+│   ├── endpoints/       # API endpoints definitions
+│   ├── slices/          # Redux slices (reducers/actions)
+│   └── index.ts         # Store configuration
+└── theme/               # Theme definitions and manager
+```
+
+## 🛠 Getting Started
+
+### Prerequisites
+
+- Node.js
+- npm or yarn
+
+### Installation
+
+1.  **Clone the repository or use as template:**
+
+    ```bash
+    git clone https://github.com/yourusername/expo-starter-template.git my-app
+    cd my-app
+    ```
+
+2.  **Install dependencies:**
+    ```bash
+    npm install
+    # or
+    pnpm install
+    ```
+
+### Running the App
+
+This project uses **Development Builds**. You cannot use the standard "Expo Go" app for some native features (like MMKV).
+
+1.  **Start the development server:**
+
+    ```bash
+    npx expo start
+    ```
+
+2.  **Run on Emulator/Simulator:**
+
+    ```bash
+    pnpm android
+    # or
+    pnpm ios
+    ```
+
+    _Note: The first time you run this, it will build the native app on your device/emulator._
+
+## 🧹 Linting & Code Quality
+
+The project includes custom ESLint rules to maintain code quality.
+
+- **Fix linting issues automatically:**
+  ```bash
+  npx eslint . --fix
   ```
 
-- Start the development server:
+This will automatically remove unused imports and fix formatting issues.
 
-  ```sh
-  npm start
-  ```
+## 📦 Key Dependencies
 
-- Build and run iOS and Android development builds:
+| Package                      | Usage                    |
+| ---------------------------- | ------------------------ |
+| `@react-navigation/native`   | Navigation               |
+| `@reduxjs/toolkit`           | State Management         |
+| `react-native-mmkv`          | High performance storage |
+| `react-native-reanimated`    | Animations               |
+| `react-native-actions-sheet` | Bottom sheets            |
+| `expo-secure-store`          | Secure storage           |
+| `axios`                      | Networking               |
 
-  ```sh
-  npm run ios
-  # or
-  npm run android
-  ```
+## 🤝 Contributing
 
-- In the terminal running the development server, press `i` to open the iOS simulator, `a` to open the Android device or emulator, or `w` to open the web browser.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-## Notes
+## 📄 License
 
-This project uses a [development build](https://docs.expo.dev/develop/development-builds/introduction/) and cannot be run with [Expo Go](https://expo.dev/go). To run the app with Expo Go, edit the `package.json` file, remove the `expo-dev-client` package and `--dev-client` flag from the `start` script.
-
-We highly recommend using the development builds for normal development and testing.
-
-The `ios` and `android` folder are gitignored in the project by default as they are automatically generated during the build process ([Continuous Native Generation](https://docs.expo.dev/workflow/continuous-native-generation/)). This means that you should not edit these folders directly and use [config plugins](https://docs.expo.dev/config-plugins/) instead. However, if you need to edit these folders, you can remove them from the `.gitignore` file so that they are tracked by git.
-
-## Resources
-
-- [React Navigation documentation](https://reactnavigation.org/)
-- [Expo documentation](https://docs.expo.dev/)
-
----
-
-Demo assets are from [lucide.dev](https://lucide.dev/)
+This project is open source and available under the [MIT License](LICENSE).
