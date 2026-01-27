@@ -65,10 +65,16 @@ src/
 
 ### Installation
 
-1.  **Clone the repository or use as template:**
+1.  **Create a new project using this template:**
 
     ```bash
-    git clone https://github.com/yourusername/expo-starter-template.git my-app
+    npx create-expo-app -t https://github.com/AmbaC0de/expo-starter-template
+    ```
+
+    Or clone the repository manually:
+
+    ```bash
+    git clone https://github.com/AmbaC0de/expo-starter-template.git my-app
     cd my-app
     ```
 
