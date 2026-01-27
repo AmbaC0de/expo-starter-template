@@ -61,7 +61,7 @@ src/
 ### Prerequisites
 
 - Node.js
-- npm or yarn
+- npm or yarn or pnpm
 
 ### Installation
 
