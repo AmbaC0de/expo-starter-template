@@ -126,10 +126,6 @@ This will automatically remove unused imports and fix formatting issues.
 | `expo-secure-store`          | Secure storage           |
 | `axios`                      | Networking               |
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
 ## 📄 License
 
 This project is open source and available under the [MIT License](LICENSE).
