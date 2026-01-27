@@ -61,7 +61,7 @@ src/
 ### Prerequisites
 
 - Node.js
-- npm or yarn or pnpm
+- pnpm (recommended) or npm/yarn
 
 ### Installation
 
@@ -80,8 +80,6 @@ src/
 
 2.  **Install dependencies:**
     ```bash
-    npm install
-    # or
     pnpm install
     ```
 
