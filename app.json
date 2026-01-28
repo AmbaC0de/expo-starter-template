@@ -29,6 +29,9 @@
         }
       ],
       "expo-secure-store"
-    ]
+    ],
+    "experiments": {
+      "reactCompiler": true
+    }
   }
 }
